@@ -287,3 +287,37 @@ if you're an action, the only direction you can do is to the Dispatcher.
 interesting, a view needs to change the store. the only a way a view can tell the store to change data is a long way, create an action, have it dispatch. it's a one way constraint. but the constraint is good. it organises your code into a single flow. you know there's only one direction to go. easier. 
 
 70 percent of flux is just refactoring javascript, writing good code. 
+
+
+import React from "react";
+
+import Game from "./Game";
+
+class Container extends React.Component {
+  constructor(props) {
+    super(props);
+    // this.state = { gameId: 1, resetOk: false }; 
+    this.state = { gameId: 1,
+      gameState: 'highlight',
+      correctGuesses: [],
+      wrongGuesses: []
+    };
+  }
+  handleClick() {
+    this.setState({ gameId: this.state.gameId + 1 }); 
+  }
+  render() {
+    return (
+      <div>
+        <Game key={this.state.gameId} randomCellCount={6} 
+              {...this.state} />
+        <button onClick={this.handleClick.bind(this)}>Change</button>
+      </div>
+    );
+  }
+}
+
+export default Container;
+
+
+flux pattern, instead of managing state in react...
