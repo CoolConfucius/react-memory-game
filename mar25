@@ -612,3 +612,5 @@ export default GameActions;
 
 
 dispatch to all in systme to communication intenntion to reset the game. 
+
+a dispatcher is also an event emitter but a special type that emmits everything to everyone. 
