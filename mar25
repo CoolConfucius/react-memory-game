@@ -275,3 +275,8 @@ it's directly related to redux.
 
 git hub for flux diagram summaraises the flux idea. 
 so far, we're just doing React Views, doign all inside there. nothign wrong with that. don't use flux unless you really neeed it. for small applications, you may not need flux. just like in angular you don't need if not a lot of binding with data. however, if you do ahve a lot of data interactivity and you wan tto a organize the way you fetch server. then flux is a safe choice. 
+flux is kind of like relay. relay is fancy. relay may be an overkill. relay is a framework, a commitment, have to do it their where. flux is a pattern. 
+when you do the flux pattern, you have the flexibility of javascript, not limited or guided by any framework. 
+complete flexbility in designing, that's an advantage. but also disadvantage for structuring, boilderplate. 
+do you want to write a lot of code or be exposed to some kind of black magick? it's a preference. if you're okay with writing a lot of boiler code, flux. if you're okay with design decisions made fo ryou, then framework like relay is a good choice. 
+in the beginning, framework is good, then you understand what' it's tyring to do and go for frameworkless option. 
