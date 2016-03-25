@@ -272,3 +272,6 @@ facebook released the: dispatcher
 singleton. 
 and there's also Flux Utils 
 it's directly related to redux. 
+
+git hub for flux diagram summaraises the flux idea. 
+so far, we're just doing React Views, doign all inside there. nothign wrong with that. don't use flux unless you really neeed it. for small applications, you may not need flux. just like in angular you don't need if not a lot of binding with data. however, if you do ahve a lot of data interactivity and you wan tto a organize the way you fetch server. then flux is a safe choice. 
