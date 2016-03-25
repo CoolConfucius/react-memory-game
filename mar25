@@ -593,3 +593,4 @@ export default new GameStore();
 
 
 refactoring 
+changing gamestate through gamestore. 
