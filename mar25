@@ -401,3 +401,42 @@ something. we do that using:
 events. 
 you can read from the store but can't write to it. 
 flux is make the store announce its changes. 
+
+import { EventEmitter } from "events"; 
+
+let gameId = 1;
+let gameState = 'highlight';
+let correctGuesses = [];
+let wrongGuesses = [];
+
+class GameStore extends EventEmitter { 
+  getAppState() {
+    return { 
+      gameId,
+      gameState,
+      correctGuesses,
+      wrongGuesses
+    };
+  }
+
+  recordGuess({correct, cellId}) {
+    let { correctGuesses, wrongGuesses } = this.state;
+    if (correct) {
+      correctGuesses.push(cellId);
+    } else {
+      wrongGuesses.push(cellId);
+    }
+    this.setState( { correctGuesses, wrongGuesses } );
+  }
+
+  changeGameState(newGameState){
+    gameState = newGameState; 
+  }
+
+  resetGame() {
+    gameId = gameId + 1; 
+  }
+}
+
+export default new GameStore(); 
+
