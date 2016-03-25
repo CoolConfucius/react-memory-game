@@ -508,3 +508,5 @@ componentWillUnmount() {
 
 50% of flux. 
 this is where dispatcher comes in. we do actions through the dispatcher. 
+
+jspm install npm:events
