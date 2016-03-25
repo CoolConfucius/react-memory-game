@@ -185,4 +185,4 @@ make a button on container.
 
 How od you change somethitn in react? you put it on the stae. 
 
-
+you can't really change the props of the component? 
