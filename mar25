@@ -245,3 +245,5 @@ componentDidMount() {
 
   always use a unique id for element in children. dynamic. 
   not recieving props
+
+challenge, only show the reset button if the game is won or lost. don't show it if the game is playing. 
