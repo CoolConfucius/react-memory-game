@@ -598,3 +598,13 @@ changing gamestate through gamestore.
 
 Changing data in store directly is against flux. can do withotu flux, 
 however, flux adds to the constraint. 
+we want to create an action. 
+
+GameActions js 
+const GameActions = {
+  resetGame() {
+    console.log("In game actions, reset game");
+  }
+}
+
+export default GameActions; 
