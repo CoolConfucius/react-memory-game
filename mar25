@@ -399,3 +399,4 @@ even if we don't use flux, moving to GameStore is better because of isolation. s
 
 something. we do that using: 
 events. 
+you can read from the store but can't write to it. 
