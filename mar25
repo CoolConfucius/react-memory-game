@@ -18,3 +18,29 @@ enchance fake browser to be in sync with input.
 so when i type in the dom, i really wan tto tye p in the fake broswr. respect the facke browser. we can wrtie some short cod tot make it into the fake broswer. 
 we replace the typing behvior with something in react. 
 block me from typing? what happens is, when you type, react resets the value to 42. the staet doesn't change. state value is 42. rerender to 42. it looks like you can't type. 
+
+import React from "react";
+
+
+class Test extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { x: 42 };
+  }
+  handleChange(event){
+    console.log(event.target.value);
+  }
+  render() {
+    return (
+      <div>
+        Testing Controlled Components
+        <br />
+        {this.state.x}
+        <br />
+        <input value={this.state.x}/>
+      </div>
+    );
+  }
+}
+
+export default Test;
