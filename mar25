@@ -604,7 +604,11 @@ GameActions js
 const GameActions = {
   resetGame() {
     console.log("In game actions, reset game");
+    Dispatcher.dispatch
   }
 }
 
 export default GameActions; 
+
+
+dispatch to all in systme to communication intenntion to reset the game. 
