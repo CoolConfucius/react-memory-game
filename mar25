@@ -141,14 +141,38 @@ Game.defaultProps = {
 }
 
 
-componentWillMount() {
-  console.log("componentWillMount");
-}
 
-componentWillReceiveProps() {
-  console.log("componentWillReceiveProps");
-}
+componentDidMount() {
+    console.log("componentDidMount");
+    setTimeout(() => {
+      this.setState({ gameState: 'challenge' });
+    }, 3000)
+  }
 
-shouldComponentUpdate() {
-  console.log("shouldComponentUpdate");
-}
+  componentWillMount() {
+    console.log("componentWillMount");
+  }
+
+  componentWillReceiveProps() {
+    console.log("componentWillReceiveProps");
+  }
+
+  shouldComponentUpdate() {
+    console.log("shouldComponentUpdate");
+    return true;
+  }
+
+  componentWillUpdate() {
+    console.log("componentWillUpdate");
+  }
+
+  componentDidUpdate() {
+    console.log("componentDidUpdate");
+  }
+
+  componentWillUnmount() {
+    console.log("componentWillUnmount");
+  }
+
+didn't get comopnent will recieve props cuz props ddidn't change. state change 
+at 3 second mark, state change. 
