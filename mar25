@@ -510,3 +510,7 @@ componentWillUnmount() {
 this is where dispatcher comes in. we do actions through the dispatcher. 
 
 jspm install npm:events
+
+
+in container js after imports: 
+window.R = GameStore;  
