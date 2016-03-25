@@ -51,7 +51,37 @@ class Test extends React.Component {
 
 export default Test;
 
-
 now in sync with fake broweser. taht's kind of like two way data binding. 
 
 from reacts perspective i'm enhancing fake browswer. we call this a contorolled input component. 
+
+if i have a button... 
+import React from "react";
+
+
+class Test extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { x: 42 };
+  }
+  handleChange(event){
+    // console.log(event.target.value);
+    this.setState({ x: event.target.value });
+  }
+  render() {
+    return (
+      <div>
+        Testing Controlled Components
+        <br />
+        {this.state.x}
+        <br />
+        <input value={this.state.x} 
+          onChange={this.handleChange.bind(this)}
+          />
+        <button onClick={() => alert(this.state.x) }>Alert</button>
+      </div>
+    );
+  }
+}
+
+export default Test;
