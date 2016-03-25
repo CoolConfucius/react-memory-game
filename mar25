@@ -116,6 +116,12 @@ to way to fix it is, make the component complain.
 javascript is not a typed language. that's why big players like angular and react want typs. 
 
 Prop types
+
+Game.propTypes = {
+  rows: React.PropTypes.number,
+  columns: React.PropTypes.number
+}
+
 Cell.propTypes = {
   recordGuess: React.PropTypes.function
 }
