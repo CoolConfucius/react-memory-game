@@ -176,3 +176,29 @@ componentDidMount() {
 
 didn't get comopnent will recieve props cuz props ddidn't change. state change 
 at 3 second mark, state change. 
+
+
+interview: 
+make it so that component reieve props trigger. 
+
+make a button on container. 
+
+import React from "react";
+
+import Game from "./Game";
+
+class Container extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <Game randomCellCount={6} />
+        <button onClick={this.handleClick.bind(this)}>Change</button>
+      </div>
+    );
+  }
+}
+
+export default Container;
