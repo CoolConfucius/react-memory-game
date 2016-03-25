@@ -682,3 +682,6 @@ class GameStore extends EventEmitter {
 }
 
 export default new GameStore();
+
+
+git pull && jspm install && serve
