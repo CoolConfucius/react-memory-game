@@ -514,3 +514,10 @@ jspm install npm:events
 
 in container js after imports: 
 window.R = GameStore;  
+
+we'll write new function called handleAction 
+
+handleAction(CODE) {
+  // Handle The Action 
+  this.emmit("change"); 
+}
