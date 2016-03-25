@@ -239,3 +239,9 @@ componentDidMount() {
   }
 
   so we have a reset button! 
+
+  changing a key of an element makes react think it's brand new. 
+
+
+  always use a unique id for element in children. dynamic. 
+  not recieving props
