@@ -392,3 +392,7 @@ class GameStore {
 }
 
 export default new GameStore(); 
+
+
+
+even if we don't use flux, moving to GameStore is better because of isolation. some may argue agaisnt that. 
