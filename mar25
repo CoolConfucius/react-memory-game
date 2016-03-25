@@ -381,6 +381,14 @@ class GameStore {
     }
     this.setState( { correctGuesses, wrongGuesses } );
   }
+
+  changeGameState(newGameState){
+    gameState = newGameState; 
+  }
+
+  resetGame() {
+    gameId = gameId + 1; 
+  }
 }
 
 export default new GameStore(); 
