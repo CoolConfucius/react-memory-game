@@ -114,3 +114,8 @@ nothing happened. that's worse than an error. you don't know what's going on.
 reason is, component didn't know what to do with "five" it wants a number, not a string. 
 to way to fix it is, make the component complain. 
 javascript is not a typed language. that's why big players like angular and react want typs. 
+
+Prop types
+Cell.propTypes = {
+  recordGuess: React.PropTypes.function
+}
