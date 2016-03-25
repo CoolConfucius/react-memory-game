@@ -631,3 +631,55 @@ const GameActions = {
 }
 
 export default GameActions; 
+
+
+
+gamestore js 
+import { EventEmitter } from "events";
+import AppDispatcher from "./AppDispatcher"; 
+
+let gameId = 1;
+let gameState = 'highlight';
+let correctGuesses = [];
+let wrongGuesses = [];
+
+class GameStore extends EventEmitter {
+  constructor(props) {
+    super(props); 
+
+    AppDispatcher.register(this.handleAction);
+  }
+  getAppState() {
+    return {
+      gameId,
+      gameState,
+      correctGuesses,
+      wrongGuesses
+    };
+  }
+  handleAction(action) {
+    // Handle The Action
+    // CODE = 'RESET_GAME'
+    switch (action.type) {
+      case "RESET_GAME":
+        gameId = gameId + 1;
+        break;
+      case "CHANGE_GAME_STATE":
+        gameState = action.newGameState;
+        break;
+      case "RECORD_GUESS":
+        if (action.correct) {
+          correctGuesses.push(action.cellId);
+        } else {
+          wrongGuesses.push(action.cellId);
+        }
+        break;
+      default:
+        // do nothing
+    }
+    this.emit("change");
+  }
+
+}
+
+export default new GameStore();
