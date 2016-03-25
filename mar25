@@ -266,3 +266,9 @@ a single dispatcher in your system.
 
 Flux 
 facebook.github.io/flux/
+docs 
+facebook released some tools for you to do vanilla javascript. 
+facebook released the: dispatcher
+singleton. 
+and there's also Flux Utils 
+it's directly related to redux. 
