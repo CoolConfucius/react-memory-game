@@ -53,3 +53,5 @@ export default Test;
 
 
 now in sync with fake broweser. taht's kind of like two way data binding. 
+
+from reacts perspective i'm enhancing fake browswer. we call this a contorolled input component. 
