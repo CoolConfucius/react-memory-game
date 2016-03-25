@@ -127,3 +127,9 @@ Cell.propTypes = {
 }
 
 it's func, not function 
+
+is required: 
+Game.propTypes = {
+  rows: React.PropTypes.number.isRequired,
+  columns: React.PropTypes.number.isRequired
+}
