@@ -519,5 +519,6 @@ we'll write new function called handleAction
 
 handleAction(CODE) {
   // Handle The Action 
+  // CODE = 'RESET_GAME'
   this.emmit("change"); 
 }
