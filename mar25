@@ -647,7 +647,7 @@ class GameStore extends EventEmitter {
   constructor(props) {
     super(props); 
 
-    AppDispatcher.register(this.handleAction);
+    AppDispatcher.register(this.handleAction.bind(this));
   }
   getAppState() {
     return {
