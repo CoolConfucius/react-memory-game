@@ -220,3 +220,22 @@ export default Container;
 
 timer issue? 
 let's try to debug this. which component is doing that? 
+
+every time you create a timer, clear it at unmount. 
+
+give the timer an id:
+
+
+componentDidMount() {
+    console.log("componentDidMount");
+    this.stateTimerId = setTimeout(() => {
+      this.setState({ gameState: 'challenge' });
+    }, 3000)
+  }
+
+ componentWillUnmount() {
+    console.log("componentWillUnmount");
+    clearTimeout(this.stateTimerId);
+  }
+
+  so we have a reset button! 
