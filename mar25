@@ -261,3 +261,8 @@ do i need a reset for every game? no right answer here. do you want it be reusab
 MVC fail when you have a lot of channels, entities in the system that communicate with each other freely. hard to see the connections. they work, but it's hard to maintain the connections. models depend on other models. cascading updates. when a model updates a view... cycle of depdendies that's hard to detect and fix. 
 this is where a flux pattern could help. flux helps when shared state. make it constraint so that don't have mvc situation. don't have dependencies go over each other. you put a state in a flux store, a third party module. an dyou make all your react components read from that store. they can't change the state. 
 if you want to change the state, you do it through a dispatcher. 
+a single dispatcher in your system. 
+
+
+Flux 
+facebook.github.io/flux/
