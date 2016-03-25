@@ -505,3 +505,5 @@ componentDidMount() {
 componentWillUnmount() {
   GameStore.removeListener("change", _onChange); 
 }
+
+50% of flux. 
