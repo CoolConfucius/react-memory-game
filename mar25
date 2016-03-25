@@ -618,3 +618,16 @@ a dispatcher is also an event emitter but a special type that emmits everything 
 jspm install flux
 
 the store is what makes strategic positions. 
+
+import AppDispatcher from "./AppDispatcher"; 
+
+const GameActions = {
+  resetGame() {
+    console.log("In game actions, reset game");
+    AppDispatcher.dispatch({
+
+    });
+  }
+}
+
+export default GameActions; 
