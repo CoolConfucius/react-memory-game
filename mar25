@@ -493,10 +493,15 @@ export default Container;
 
 whenver store change, call back. 
 componentDidMount() {
-        
-  }
-  componentWillUnmount() {
-        
-  }
+      
+}
+componentWillUnmount() {
+      
+}
 
-  
+componentDidMount() {
+  GameStore.on("change", _onChange);
+}
+componentWillUnmount() {
+  GameStore.removeListener("change", _onChange); 
+}
