@@ -524,6 +524,8 @@ handleAction(CODE) {
 }
 
 
+
+
 import { EventEmitter } from "events"; 
 
 let gameId = 1;
@@ -567,10 +569,18 @@ class GameStore extends EventEmitter {
     // CODE = 'RESET_GAME'
     switch (CODE) {
       case "RESET_GAME":
+        gameId = gameId + 1; 
         break; 
       case "CHANGE_GAME_STATE":
+        gameState = newGameState; 
         break; 
       case "RECORD_GUESS":
+        let { correctGuesses, wrongGuesses } = this.state;
+        if (correct) {
+          correctGuesses.push(cellId);
+        } else {
+          wrongGuesses.push(cellId);
+        }
         break;
       default: 
         // ... 
@@ -580,3 +590,6 @@ class GameStore extends EventEmitter {
 }
 
 export default new GameStore(); 
+
+
+refactoring 
