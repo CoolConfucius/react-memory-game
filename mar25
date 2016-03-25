@@ -8,3 +8,6 @@ understandign life cycle hooks is what takes you from beginer to medium react de
 Event pooling
 you have synthesized event object. can't use it asynchronisly. react reuses this event. 
 null because react is doign event pooling. 
+
+Controlled components
+...
