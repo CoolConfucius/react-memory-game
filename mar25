@@ -446,3 +446,48 @@ export default new GameStore();
 export default new GameStore(); 
 
 thge event emitter gives me api. 
+
+
+
+that's bascially an event emmiter. we listen to it. do an operation when that event fires. 
+Container js 
+_onChange, read the gamestore one more time. set the state to newstate. 
+
+import React from "react";
+
+import Game from "./Game";
+
+import GameStore from "/GameStore";
+
+class Container extends React.Component {
+  constructor(props) {
+    super(props);
+    // this.state = { gameId: 1, resetOk: false }; 
+    // this.state = { gameId: 1,
+    //   gameState: 'highlight',
+    //   correctGuesses: [],
+    //   wrongGuesses: []
+    // };
+    this.state = GameStore.getState(); 
+  }
+  handleClick() {
+    this.setState({ gameId: this.state.gameId + 1 }); 
+    // GameStore resetgame
+  }
+  _onChange() {
+    this.setState(GameStore.getAppState());
+  }
+  render() {
+    return (
+      <div>
+        <Game key={this.state.gameId} randomCellCount={6} 
+              {...this.state} />
+        <button onClick={this.handleClick.bind(this)}>Change</button>
+      </div>
+    );
+  }
+}
+
+export default Container;
+
+
