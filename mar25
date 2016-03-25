@@ -594,3 +594,7 @@ export default new GameStore();
 
 refactoring 
 changing gamestate through gamestore. 
+
+
+Changing data in store directly is against flux. can do withotu flux, 
+however, flux adds to the constraint. 
