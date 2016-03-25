@@ -19,6 +19,11 @@ so when i type in the dom, i really wan tto tye p in the fake broswr. respect th
 we replace the typing behvior with something in react. 
 block me from typing? what happens is, when you type, react resets the value to 42. the staet doesn't change. state value is 42. rerender to 42. it looks like you can't type. 
 
+
+wehn we type, we want to change the state. 
+
+
+Test.js
 import React from "react";
 
 
@@ -28,7 +33,8 @@ class Test extends React.Component {
     this.state = { x: 42 };
   }
   handleChange(event){
-    console.log(event.target.value);
+    // console.log(event.target.value);
+    this.setState({ x: event.target.value });
   }
   render() {
     return (
@@ -44,3 +50,6 @@ class Test extends React.Component {
 }
 
 export default Test;
+
+
+now in sync with fake broweser. taht's kind of like two way data binding. 
