@@ -247,3 +247,13 @@ componentDidMount() {
   not recieving props
 
 challenge, only show the reset button if the game is won or lost. don't show it if the game is playing. 
+
+
+====== lunch break ======
+can do : 
+this.state = { gameId: 1, resetOk: false };  
+
+or in cgame compeont: 
+
+ask, does this reset reset belong to game component? 
+do i need a reset for every game? no right answer here. do you want it be reusable component? design quesion answer based on requirements. 
