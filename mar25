@@ -350,3 +350,8 @@ class GameStore {
 
 export default new GameStore(); 
 what i did there is pure refactor. thi sis javascript, not react, not flux. 
+
+all these operations can be extratcted from GameStore. that's how we're gonna refactor our game. 
+
+recordGuess belongs in GameStore, not react component 
+stuff we have int eh game component should be in the GameStore. refactor. again, this is only javascript refactoring. 
