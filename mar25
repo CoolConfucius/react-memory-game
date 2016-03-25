@@ -123,5 +123,7 @@ Game.propTypes = {
 }
 
 Cell.propTypes = {
-  recordGuess: React.PropTypes.function
+  recordGuess: React.PropTypes.func
 }
+
+it's func, not function 
