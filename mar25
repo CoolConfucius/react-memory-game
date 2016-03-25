@@ -355,3 +355,32 @@ all these operations can be extratcted from GameStore. that's how we're gonna re
 
 recordGuess belongs in GameStore, not react component 
 stuff we have int eh game component should be in the GameStore. refactor. again, this is only javascript refactoring. 
+
+i'mma take this object and mekit into multiple variables. 
+let gameId = 1;
+let gameState = 'highlight';
+let correctGuesses = [];
+let wrongGuesses = [];
+
+class GameStore { 
+  getAppState() {
+    return { 
+      gameId,
+      gameState,
+      correctGuesses,
+      wrongGuesses
+    };
+  }
+
+  recordGuess({correct, cellId}) {
+    let { correctGuesses, wrongGuesses } = this.state;
+    if (correct) {
+      correctGuesses.push(cellId);
+    } else {
+      wrongGuesses.push(cellId);
+    }
+    this.setState( { correctGuesses, wrongGuesses } );
+  }
+}
+
+export default new GameStore(); 
