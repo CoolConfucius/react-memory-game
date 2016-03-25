@@ -183,22 +183,6 @@ make it so that component reieve props trigger.
 
 make a button on container. 
 
-import React from "react";
+How od you change somethitn in react? you put it on the stae. 
 
-import Game from "./Game";
 
-class Container extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div>
-        <Game randomCellCount={6} />
-        <button onClick={this.handleClick.bind(this)}>Change</button>
-      </div>
-    );
-  }
-}
-
-export default Container;
