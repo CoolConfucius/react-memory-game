@@ -522,3 +522,61 @@ handleAction(CODE) {
   // CODE = 'RESET_GAME'
   this.emmit("change"); 
 }
+
+
+import { EventEmitter } from "events"; 
+
+let gameId = 1;
+let gameState = 'highlight';
+let correctGuesses = [];
+let wrongGuesses = [];
+
+class GameStore extends EventEmitter { 
+  getAppState() {
+    return { 
+      gameId,
+      gameState,
+      correctGuesses,
+      wrongGuesses
+    };
+  }
+
+  // recordGuess({correct, cellId}) {
+  //   let { correctGuesses, wrongGuesses } = this.state;
+  //   if (correct) {
+  //     correctGuesses.push(cellId);
+  //   } else {
+  //     wrongGuesses.push(cellId);
+  //   }
+  //   // this.setState( { correctGuesses, wrongGuesses } );
+  //   this.emit("change"); 
+  // }
+
+  // changeGameState(newGameState){
+  //   gameState = newGameState; 
+  //   this.emit("change");
+  // }
+
+  // resetGame() {
+  //   gameId = gameId + 1; 
+  //   this.emit("change");
+  // }
+
+  handleAction(CODE) {
+    // Handle The Action 
+    // CODE = 'RESET_GAME'
+    switch (CODE) {
+      case "RESET_GAME":
+        break; 
+      case "CHANGE_GAME_STATE":
+        break; 
+      case "RECORD_GUESS":
+        break;
+      default: 
+        // ... 
+    }
+    this.emmit("change"); 
+  }
+}
+
+export default new GameStore(); 
