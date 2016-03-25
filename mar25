@@ -491,3 +491,12 @@ class Container extends React.Component {
 export default Container;
 
 
+whenver store change, call back. 
+componentDidMount() {
+        
+  }
+  componentWillUnmount() {
+        
+  }
+
+  
