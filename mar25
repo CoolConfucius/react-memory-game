@@ -426,17 +426,23 @@ class GameStore extends EventEmitter {
     } else {
       wrongGuesses.push(cellId);
     }
-    this.setState( { correctGuesses, wrongGuesses } );
+    // this.setState( { correctGuesses, wrongGuesses } );
+    this.emit("change"); 
   }
 
   changeGameState(newGameState){
     gameState = newGameState; 
+    this.emit("change");
   }
 
   resetGame() {
     gameId = gameId + 1; 
+    this.emit("change");
   }
 }
 
 export default new GameStore(); 
 
+export default new GameStore(); 
+
+thge event emitter gives me api. 
