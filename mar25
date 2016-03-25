@@ -320,4 +320,33 @@ class Container extends React.Component {
 export default Container;
 
 
-flux pattern, instead of managing state in react...
+flux pattern, instead of managing state in react... all model managagement is set state. if need react to render, put them on state. have component read form store? 
+we name that model as a Store. 
+
+Constainer.js 
+import GameStore from "/GameStore"; 
+
+this.state = GameStore.getState(); 
+
+
+// this.state = { gameId: 1,
+    //   gameState: 'highlight',
+    //   correctGuesses: [],
+    //   wrongGuesses: []
+    // };
+imma take this state and define it in the GameStore 
+
+
+GameStore js: 
+class GameStore { 
+  getAppState() {
+    return { gameId: 1,
+      gameState: 'highlight',
+      correctGuesses: [],
+      wrongGuesses: []
+    };
+  }
+}
+
+export default new GameStore(); 
+what i did there is pure refactor. thi sis javascript, not react, not flux. 
