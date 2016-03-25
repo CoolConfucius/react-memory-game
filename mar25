@@ -186,3 +186,37 @@ make a button on container.
 How od you change somethitn in react? you put it on the stae. 
 
 you can't really change the props of the component? 
+
+
+key changed! so react mounted a new game component. bascially, that button is a reset button! 
+import React from "react";
+
+import Game from "./Game";
+
+class Container extends React.Component {
+  constructor(props) {
+    super(props);
+    // this.state = { gridSize: 4 }; 
+    this.state = { gameId: 1 }; 
+  }
+  handleClick() {
+    // this.setState({ gridSize: 5 }); 
+    this.setState({ gameId: this.state.gameId + 1 }); 
+  }
+  render() {
+    var gridSize = 5; 
+    return (
+      <div>
+        <Game key={this.state.gameId} rows={gridSize} rows={gridSize} randomCellCount={6} />
+        <button onClick={this.handleClick.bind(this)}>Change</button>
+      </div>
+    );
+  }
+}
+
+export default Container;
+
+
+
+timer issue? 
+let's try to debug this. which component is doing that? 
