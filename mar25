@@ -133,3 +133,9 @@ Game.propTypes = {
   rows: React.PropTypes.number.isRequired,
   columns: React.PropTypes.number.isRequired
 }
+
+default: 
+Game.defaultProps = {
+  rows: 5, 
+  columns: 5
+}
