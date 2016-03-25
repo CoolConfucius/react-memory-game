@@ -658,8 +658,7 @@ class GameStore extends EventEmitter {
     };
   }
   handleAction(action) {
-    // Handle The Action
-    // CODE = 'RESET_GAME'
+    console.log("Handling", action);
     switch (action.type) {
       case "RESET_GAME":
         gameId = gameId + 1;
