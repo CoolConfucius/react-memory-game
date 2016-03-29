@@ -685,3 +685,120 @@ export default new GameStore();
 
 
 git pull && jspm install && serve
+
+
+we start from the Action Creators 
+User Interactions -> Action Creators 
+
+import AppDispatcher from "./AppDispatcher";
+
+const GameActions = {
+  resetGame() {
+    AppDispatcher.dispatch({
+      type: "RESET_GAME"
+    });
+  }, 
+
+  changeGameState(newGameState) {
+    AppDispatcher.dispatch({
+      type: "CHANGE_GAME_STATE",  
+      newGameState
+    }) 
+  },
+
+  recordGuess(data) {
+    AppDispatcher.dispatch({
+      type: "RECORD_GUESS",
+      ...data
+    }) 
+  }
+};
+
+export default GameActions;
+
+
+
+Game Store js 
+
+import { EventEmitter } from "events";
+import AppDispatcher from "./AppDispatcher";
+
+let gameId = 1;
+let gameState = 'highlight';
+let correctGuesses = [];
+let wrongGuesses = [];
+
+class GameStore extends EventEmitter {
+  constructor(props) {
+    super(props);
+
+    AppDispatcher.register(this.handleAction.bind(this));
+  }
+  getAppState() {
+    return {
+      gameId,
+      gameState,
+      correctGuesses,
+      wrongGuesses
+    };
+  }
+  checkGameState(){
+    if (correctGuesses.length === 6) {
+      gameState = "won"
+    };
+  }
+  handleAction(action) {
+    switch (action.type) {
+      case "RESET_GAME":
+        gameId = gameId + 1;
+        break;
+      case "CHANGE_GAME_STATE":
+        gameState = action.newGameState;
+        break;
+      case "RECORD_GUESS":
+        if (action.correct) {
+          correctGuesses.push(action.cellId);
+        } else {
+          wrongGuesses.push(action.cellId);
+        }
+        break;
+      default:
+        // do nothing
+    }
+    this.emit("change");
+  }
+
+}
+
+export default new GameStore();
+
+
+don't need to have the ccheckGameStage in the component. 
+
+
+
+checkGameState(){
+    if (correctGuesses.length === randomCellCount) {
+      gameState = "won";
+    } else {
+      if (wrongGuesses.length === 3) {
+        gameState = "lost";
+      } 
+    }
+  }
+
+
+
+express sever 
+
+mkdir public 
+mv index.html lib/ 
+rm -rf config.js jspm_packages/
+jspm init
+public folder path is: public 
+
+jspm killed something. what do we do? git? 
+
+fuck, i stopped taking notes. 
+
+relay is similar to flux but manasges data in single store. manage data, components. 
